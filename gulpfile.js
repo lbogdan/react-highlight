@@ -9,10 +9,11 @@ gulp.task('copy', function () {
 });
 
 gulp.task('sass', function () {
-  return  gulp.src(['./docs/**/*.scss'])
-              .pipe(sass({ loadPath : ['bower_components', 'node_modules'],}))
-               .on('error', function (err) { console.log(err.message); })
-              .pipe(gulp.dest('./build'));
+  return sass('./docs/**/*.scss', {
+    style: 'compressed',
+    loadPath : ['bower_components', 'node_modules']
+  })
+    .pipe(gulp.dest('./build'));
 });
 
 gulp.task('server', ['copy', 'sass'], function (callback) {

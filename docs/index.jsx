@@ -9,8 +9,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Highlight = require('../src/index');
+import createReactClass from 'create-react-class';
 
-var Docs = React.createClass({
+var Docs = createReactClass({
   render: function () {
     return (
       <div>
